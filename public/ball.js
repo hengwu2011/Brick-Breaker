@@ -1,5 +1,5 @@
 class Ball {
-  constructor(x, y, radius, xSpeed, ySpeed) {
+  constructor({x, y, radius, xSpeed, ySpeed}={}) {
     this.x = x;
     this.y = y;
     this.radius = radius;
@@ -7,6 +7,7 @@ class Ball {
     this.ySpeed = ySpeed;
     this.grav = -0.8;
     this.maxYSpeed = 30;
+    this.airFriction = 0.99999
   }
 
   move() {
@@ -54,6 +55,6 @@ class Ball {
     );
   }
   air(){
-    this.ySpeed*=0.9999999
+    this.ySpeed*=this.airFriction
   }
 }
