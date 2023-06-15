@@ -8,6 +8,7 @@ class Ball {
     this.grav = -0.8;
     this.maxYSpeed = 30;
     this.airFriction = 0.99999;
+    this.color = { r: 0, g: 255, b: 0 };
   }
 
   move() {
@@ -17,6 +18,8 @@ class Ball {
   }
 
   show() {
+    const { r, g, b } = this.color;
+    fill(r, g, b);
     ellipse(this.x, this.y, this.radius);
   }
 }
