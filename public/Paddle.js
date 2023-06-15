@@ -1,7 +1,7 @@
 class Paddle {
   constructor({
     pos = { x: windowWidth/2, y: windowHeight - 50 },
-    size = { width: 100, height: 50 },
+    size = { width: 200, height: 50 },
     color = { r: 255, g: 0, b: 0 },
   } = {}) {
     this.pos = pos;

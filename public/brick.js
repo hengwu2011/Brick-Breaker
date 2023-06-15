@@ -1,7 +1,7 @@
 class Brick {
   constructor({
     pos = { x: 10, y: 10 },
-    size = { width: 100, height: 50 },
+    size = { width: 40, height: 20 },
     color = { r: 255, g: 0, b: 0 },
     health = 1,
   } = {}) {

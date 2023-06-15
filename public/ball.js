@@ -11,6 +11,7 @@ class Ball {
   }
 
   move() {
+    this.ySpeed = min(max(this.ySpeed, -this.maxYSpeed), this.maxYSpeed);
     this.x += this.xSpeed;
     this.y += this.ySpeed;
   }
