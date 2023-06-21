@@ -2,9 +2,14 @@ const balls = [];
 let bricks = [];
 let paddle;
 let bounds;
+let cheat = false
+console.log("heng rules")
 function setup() {
   // frameRate(10);
+  // frameRate(10);
+  console.log("heng rules")
   createCanvas(windowWidth, windowHeight);
+  console.log("heng rules")
   bounds = { w: windowWidth, h: windowHeight };
   paddle = new Paddle();
   balls.push(
@@ -54,7 +59,7 @@ const newBall = () => {
       x: windowWidth / 2,
       y: windowHeight / 2,
       radius: 20,
-      xSpeed: 6,
+      xSpeed: random(-10, 10),
       ySpeed: -3,
     })
   );
@@ -95,14 +100,18 @@ const hitsObject = (ball, object) => {
     reverseXSpeed(ball);
   }
   if (ball.y < object.pos.y || ball.y > object.pos.y + object.size.height) {
-    ball.ySpeed += 3;
+    ball.ySpeed += 9;
     reverseYSpeed(ball);
+    paddleplacement(ball,object)
+
   }
   if (object instanceof Brick) {
     deleteBrick(object);
   }
 };
-
+function paddleplacement(ball,paddle){
+if (paddle.pos.x - ball.x > (paddle.pos.x+paddle.size.width)-ball.x){ball.xSpeed -= 20;}else ball.xSpeed -= 20
+}
 const manageBall = (ball, bricks, bounds, paddle) => {
   hitsBounds(ball, bounds);
   gravity(ball);
@@ -113,6 +122,11 @@ const manageBall = (ball, bricks, bounds, paddle) => {
   });
 };
 
+function keyPressed(){
+  if(key == 'l'){
+    cheat = !cheat
+  }
+}
 function draw() {
   background(0);
   balls.forEach((ball) => {
@@ -124,5 +138,5 @@ function draw() {
     brick.show();
   });
   paddle.show();
-  paddle.x = mouseX - paddle.size.width / 2;
+  paddle.x = (cheat ? balls[0].x:mouseX) - paddle.size.width / 2;
 }

@@ -1,0 +1,5 @@
+Need to Jump higher
+bigger Ball
+fix the paddle so the ball doesn't phase through the paddle
+Add lives so when it touches the ground 3 times you lose or stop the game
+Add a win screen when you break all the bricks or stop the game

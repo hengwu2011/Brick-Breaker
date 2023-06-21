@@ -1,14 +1,14 @@
 class Ball {
   constructor({ x, y, radius, xSpeed, ySpeed } = {}) {
-    this.x = x;
-    this.y = y;
-    this.radius = radius;
+    this.x = x++;
+    this.y = y++;
+    this.radius = random(200);
     this.xSpeed = xSpeed;
     this.ySpeed = ySpeed;
     this.grav = -0.8;
     this.maxYSpeed = 30;
     this.airFriction = 0.99999;
-    this.color = { r: 0, g: 255, b: 0 };
+    this.color = { r: random(255), g: random(255), b: random(255) };
   }
 
   move() {

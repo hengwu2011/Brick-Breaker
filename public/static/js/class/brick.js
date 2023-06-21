@@ -2,7 +2,7 @@ class Brick {
   constructor({
     pos = { x: 10, y: 10 },
     size = { width: 40, height: 20 },
-    color = { r: 255, g: 0, b: 0 },
+    color = { r: random(255), g: random(255), b: random(255) },
     health = 1,
   } = {}) {
     this.pos = pos;
